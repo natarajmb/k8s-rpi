@@ -1,0 +1,12 @@
+[Unit]
+Description=Custom first boot script
+ConditionPathExists=/post_install.sh
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/post_install.sh
+StandardOutput=journal+console
+
+[Install]
+WantedBy=multi-user.target
