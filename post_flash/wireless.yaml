@@ -2,6 +2,10 @@
         wlan0:
             optional: true
             dhcp4: true
+            nameservers:
+                search: [YOUR_DOMAIN_SEARCH]
+                addresses: [YOUR_NAMESERVERS]
+            gateway4: YOUR_GATEWAY
             access-points:
                 "WIRELESS_SSID":
                     password: "PASSWORD"

@@ -1,0 +1,15 @@
+[Unit]
+Description=First boot script
+ConditionPathExists=/first_boot.sh
+
+# setup required networking components before next stage i.e cloud-init.service
+After=cloud-init-local.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/first_boot.sh
+StandardOutput=journal+console
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,17 @@
+[Unit]
+Description=Post first boot script
+ConditionPathExists=!/first_boot.sh
+ConditionPathExists=/post_first_boot.sh
+
+# run customisation and package installations after networking & ssh are up
+After=cloud-config.service
+Before=cloud-final.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=true
+ExecStart=/post_first_boot.sh
+StandardOutput=journal+console
+
+[Install]
+WantedBy=multi-user.target
