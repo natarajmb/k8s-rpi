@@ -5,7 +5,7 @@ echo "First boot - updating wireless settings"
 cat /wireless.yaml >> /etc/netplan/50-cloud-init.yaml
 netplan generate
 
-# update hostname kali, bhadra, shimsha, netravati
+# update hostname
 echo "First boot - updating hostname" 
 echo "YOUR_HOSTNAME" > '/etc/hostname'
 
