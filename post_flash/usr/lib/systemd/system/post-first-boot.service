@@ -5,7 +5,9 @@ ConditionPathExists=/post_first_boot.sh
 
 # run customisation and package installations after networking & ssh are up
 After=cloud-config.service
+Requires=network-online.target
 Before=cloud-final.service
+Restart=Timeout
 
 [Service]
 Type=oneshot

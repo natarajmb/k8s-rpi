@@ -2,6 +2,8 @@
 
 Scripts and instructions on setting up the Kubernetes cluster on Raspberry Pi. Sharing here to aid anyone else attempting to do the same. I have used Raspberry Pi 4 Model B in my setup as some of the scripts assumes wifi (wlan0) built-in.
 
+_Note: This works with Ubuntu 20.04 LTS release. See tag [v1.0](https://github.com/natarajmb/k8s-rpi/tree/v1.0) for 18.04 LTS release_
+
 ## How to use the scripts
 
 Step 1 : Download the repo and execute the following commands to substitute with your desired values
@@ -33,7 +35,7 @@ Copy your ssh key for passwordless login
 
     cat ~/.ssh/id_rsa.pub >> post_install/id_rsa.pub
 
-Step 2 : Format the SD Card and load the Ubuntu 18.04 image. Mount SD Card and copy the contents from `post_flash` directory into `/writable` partition i.e. you are overlaying files on the `/etc` and `/lib` 
+Step 2 : Format the SD Card and load the Ubuntu 20.04 image. Mount SD Card and copy the contents from `post_flash` directory into `/writable` partition i.e. you are overlaying files on the `/etc` and `/lib` 
 
 Step 3 : Power on the RPi and wait for a few mins as it will power cycle twice at the end of it you should have your ready k8s node.
 
